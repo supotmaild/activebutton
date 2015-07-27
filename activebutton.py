@@ -1,5 +1,9 @@
 '''Active Button'''
 '''version 1.0.0'''
+'''27 Jul 2015'''
+'''============='''
+'''Copyright (c) 2015'''
+'''Supot Sawangpiriyakij'''
 import sys,io,os,time
 global sys
 if sys.version_info[0] < 3:
@@ -86,16 +90,7 @@ def dotask():
 
 		image_pil=Image.fromarray(np.uint8(a_image))
 		Button_im[i]=ImageTk.PhotoImage(image_pil)
-		exec("Button[i]=tk.Button(frame1,width=40,height=40,image=Button_im["+str(i)+"])")
-		Button[i].place_forget()
-		if i>=1 and i<=3:
-			Button[i].place(x=10+((i-1)*45),y=10)
-		elif i>=4 and i<=6:
-			Button[i].place(x=10+((i-4)*45),y=55)
-		elif i>=7 and i<=9:
-			Button[i].place(x=10+((i-7)*45),y=100)
-		elif i==0:
-			Button[i].place(x=10+((i+1)*45),y=145)
+		Button[i].configure(image=Button_im[i])
 	j=j+1
 	if j>=50: j=0
 	task=win.after(100,dotask)
