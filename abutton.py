@@ -14,6 +14,7 @@ if not os.path.isfile("9Things.mp4"):
 	from pytube import YouTube
 	yt=YouTube()
 	yt.url="https://www.youtube.com/watch?v=4nP4PJL-9bg"
+	yt.filename="9Things"
 	video=yt.get('mp4')
 	video.download()
 FFMPEG_BIN = "ffmpeg.exe"
